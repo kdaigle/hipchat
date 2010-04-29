@@ -5,14 +5,14 @@ This is just the first version of my copy of the HipChat API.  I'm not sure I'm 
 
 The simple way to use this is as follows:
 
-hipchat = Hipchat::Base.new("yourAPIcode")
+    hipchat = Hipchat::Base.new("yourAPIcode")
 
-rooms = hipchat.rooms
+    rooms = hipchat.rooms
 
-main_room = rooms.first
+    main_room = rooms.first
 
-main_room.speak("Bot Name", "This is a simple message")
+    main_room.speak("Bot Name", "This is a simple message")
 
-users = main_room.users # => Returns a the users in the room
+    users = main_room.users # => Returns a the users in the room
 
-users.first.profile # => Returns the special information about the user
+    users.first.profile # => Returns the special information about the user
