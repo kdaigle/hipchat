@@ -20,6 +20,10 @@ module Hipchat
       room_hash[method_name.to_s]
     end
 
+    def history(date="recent", timezone="PST")
+      self.class.get("/rooms/history", :query => {:date => date, :timezone => timezone, :room_id => self.room_id, :auth_token => self.auth_token})["messages"]
+    end
+
     def users
       users_hash = self.class.get("/rooms/show", :query => {:room_id => self.room_id, :auth_token => self.auth_token})
       User.instantiate_users(auth_token, users_hash)
